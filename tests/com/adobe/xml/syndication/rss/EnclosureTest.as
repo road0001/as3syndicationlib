@@ -33,44 +33,55 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.rss.tests
+package com.adobe.xml.syndication.rss
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.rss.Source;
+	import com.adobe.xml.syndication.rss.Enclosure;
 
-	public class SourceTest extends TestCase 
+	public class EnclosureTest extends TestCase 
 	{
 	
-		public function SourceTest(methodName:String = null)
+		public function EnclosureTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
 		
-		
-		private const URL:String = "http://www.macromedia.com/source.xml";
-		private const NAME:String = "Name of the Source";
+		private const URL:String = "";
+		private const LENGTH:Number = 473246893468343;
+		private const TYPE:String = "audio/mpeg";
 		
 		public function testURL():void
 		{
-			var c:Source = new Source();
+			var c:Enclosure = new Enclosure();
 			
 			c.url = URL;
 			
-			assertNotNull("c.url is null", c.url);
+			assertNotNull("c.url is null", URL);
 			assertTrue("c.url == URL", c.url == URL);
 		}
-
-		public function testName():void
+		
+		public function testLength():void
 		{
-			var c:Source = new Source();
+			var c:Enclosure = new Enclosure();
 			
-			c.name = NAME;
+			c.length = LENGTH;
 			
-			assertNotNull("c.name is null", c.name);
-			assertTrue("c.name == NAME", c.name == NAME);
+			assertTrue("c.length != 0", c.length != 0);
+			assertTrue("c.length == TYPE", c.length == LENGTH);
 		}
+		
+		public function testType():void
+		{
+			var c:Enclosure = new Enclosure();
+			
+			c.type = TYPE;
+			
+			assertNotNull("c.type is null", c.type);
+			assertTrue("c.type == TYPE", c.type == TYPE);
+		}
+		
 
 	}
 }

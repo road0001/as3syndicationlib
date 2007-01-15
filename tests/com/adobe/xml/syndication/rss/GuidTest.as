@@ -33,76 +33,42 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.rss.tests
+package com.adobe.xml.syndication.rss
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.rss.Cloud;
+	import com.adobe.xml.syndication.rss.Guid;
 
-	public class CloudTest extends TestCase 
+	public class GuidTest extends TestCase 
 	{
 	
-		public function CloudTest(methodName:String = null)
+		public function GuidTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
 		
+		private const PERMALINK:Boolean = true;
+		private const ID:String = "http://weblogs.macromedia/mesh/index.cfm";
 		
-		private const DOMAIN:String = "foo.macromedia.com";
-		private const PATH:String = "/path";
-		private const REGISTER_PROCEDURE:String = "api.foo.call";
-		private const PROTOCOL:String = "xml-rpc";
-		private const PORT:uint = 80;
-		
-		public function testDomain():void
+		public function testPermaLink():void
 		{
-			var c:Cloud = new Cloud();
+			var c:Guid = new Guid();
 			
-			c.domain = DOMAIN;
+			c.permaLink = PERMALINK;
 			
-			assertNotNull("c.domain is null", c.domain);
-			assertTrue("c.domain == DOMAIN", c.domain == DOMAIN);
+			assertTrue("c.permaLink != false",c.permaLink != false);
+			assertTrue("c.permaLink == PERMALINK", c.permaLink == PERMALINK);
 		}
 		
-		public function testPort():void
+		public function testId():void
 		{
-			var c:Cloud = new Cloud();
+			var c:Guid = new Guid();
 			
-			c.port = PORT;
+			c.id = ID;
 			
-			assertTrue("c.port is 0", c.port != 0);
-			assertTrue("c.port == PORT", c.port == PORT);
-		}
-
-		public function testPath():void
-		{
-			var c:Cloud = new Cloud();
-			
-			c.path = PATH;
-			
-			assertNotNull("c.path is null", c.path);
-			assertTrue("c.path == PATH", c.path == PATH);
-		}
-		
-		public function testRegisterProcedure():void
-		{
-			var c:Cloud = new Cloud();
-			
-			c.registerProcedure = REGISTER_PROCEDURE;
-			
-			assertNotNull("c.registerProcedure is null", c.registerProcedure);
-			assertTrue("c.registerProcedure == REGISTER_PROCEDURE", c.registerProcedure == REGISTER_PROCEDURE);
-		}
-		
-		public function testProtocol():void
-		{
-			var c:Cloud = new Cloud();
-			
-			c.protocol = PROTOCOL;
-			
-			assertNotNull("c.protocol is null", c.protocol);
-			assertTrue("c.protocol == PROTOCOL", c.protocol == PROTOCOL);
+			assertNotNull("c.id is null", c.id);
+			assertTrue("c.id == ID", c.id == ID);
 		}
 
 	}

@@ -33,51 +33,68 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.rss.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.rss.Category;
+	import com.adobe.xml.syndication.atom.TextTag;
 
-	public class CategoryTest extends TestCase 
+	public class TextTagTest extends TestCase 
 	{
-		private const DOMAIN:String = "foo.macromedia.com";
-
-		public function CategoryTest(methodName:String = null)
+		
+		private const TYPE:String = "html";
+		private const VALUE:String = "html";
+		
+		public static const TYPE_TEXT:String = "text";
+		public static const TYPE_HTML:String = "html";
+		public static const TYPE_XHTML:String = "xhtml";
+	
+		public function TextTagTest(methodName:String = null)
 		{
 			super(methodName);
-		}
-
-		public function testConstructor():void
+		}	
+		
+		public function testTYPE_TEXT():void
 		{
-			var c:Category = new Category();
-			assertNotNull(c.path);
+			assertNotNull("TextTag.TYPE_TEXT is null", TextTag.TYPE_TEXT);
+			assertTrue("TextTag.TYPE_TEXT == TYPE_TEXT",
+											TextTag.TYPE_TEXT == TYPE_TEXT);
 		}
-
-		public function testAddPath():void
+		
+		public function testTYPE_HTML():void
 		{
-			var c:Category = new Category();
-			c.addPath("a");
-			assertTrue("c.path.length == 1", c.path.length == 1);
-			assertEquals("c.path[0] == \"a\"", c.path[0], "a");
-			c.addPath("b");
-			assertTrue("c.path.length == 2", c.path.length == 2);
+			assertNotNull("TextTag.TYPE_HTML is null", TextTag.TYPE_HTML);
+			assertTrue("TextTag.TYPE_HTML == TYPE_HTML",
+											TextTag.TYPE_HTML == TYPE_HTML);
+		}		
+		
+		public function testTYPE_XHTML():void
+		{
+			assertNotNull("TextTag.TYPE_XHTML is null", TextTag.TYPE_XHTML);
+			assertTrue("TextTag.TYPE_XHTML == TYPE_XHTML",
+											TextTag.TYPE_XHTML == TYPE_XHTML);
+		}			
+		
+		public function testType():void
+		{
+			var c:TextTag = new TextTag();
+			
+			c.type = TYPE;
+			
+			assertNotNull("c.type is null", c.type);
+			assertTrue("c.type == TYPE", c.type == TYPE);
 		}
-
-		public function testAddPaths():void
+		
+		
+		public function testValue():void
 		{
-			var c:Category = new Category();
-			c.addPaths(["a","b","c"]);
-			assertTrue("c.path.length == 3", c.path.length == 3);
-		}
-
-		public function testDomain():void
-		{
-			var c:Category = new Category();
-			c.domain = DOMAIN;
-			assertNotNull("c.domain is null", c.domain);
-			assertTrue("c.domain == DOMAIN", c.domain == DOMAIN);
+			var c:TextTag = new TextTag();
+			
+			c.value = VALUE;
+			
+			assertNotNull("c.value is null", c.value);
+			assertTrue("c.value == VALUE", c.value == VALUE);
 		}
 	}
 }

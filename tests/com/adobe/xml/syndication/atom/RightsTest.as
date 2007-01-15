@@ -33,55 +33,20 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.rss.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.rss.Enclosure;
-
-	public class EnclosureTest extends TestCase 
-	{
+	import com.adobe.xml.syndication.atom.TextTagTest;
 	
-		public function EnclosureTest(methodName:String = null)
+	import com.adobe.xml.syndication.atom.Title;
+
+	public class RightsTest extends TextTagTest 
+	{
+		public function RightsTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
-		
-		private const URL:String = "";
-		private const LENGTH:Number = 473246893468343;
-		private const TYPE:String = "audio/mpeg";
-		
-		public function testURL():void
-		{
-			var c:Enclosure = new Enclosure();
-			
-			c.url = URL;
-			
-			assertNotNull("c.url is null", URL);
-			assertTrue("c.url == URL", c.url == URL);
-		}
-		
-		public function testLength():void
-		{
-			var c:Enclosure = new Enclosure();
-			
-			c.length = LENGTH;
-			
-			assertTrue("c.length != 0", c.length != 0);
-			assertTrue("c.length == TYPE", c.length == LENGTH);
-		}
-		
-		public function testType():void
-		{
-			var c:Enclosure = new Enclosure();
-			
-			c.type = TYPE;
-			
-			assertNotNull("c.type is null", c.type);
-			assertTrue("c.type == TYPE", c.type == TYPE);
-		}
-		
-
 	}
 }

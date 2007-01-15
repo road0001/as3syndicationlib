@@ -33,53 +33,51 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.rss
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.Category;
+	import com.adobe.xml.syndication.rss.Category;
 
 	public class CategoryTest extends TestCase 
 	{
-		
-		private const TERM:String = "as3";
-		private const SCHEME:String = "http://www.macromedia.com/as3";
-		private const LABEL:String = "ActionScript3";
-	
+		private const DOMAIN:String = "foo.macromedia.com";
+
 		public function CategoryTest(methodName:String = null)
 		{
 			super(methodName);
-		}	
-		
-		public function testTerm():void
-		{
-			var c:Category = new Category();
-			
-			c.term = TERM;
-			
-			assertNotNull("c.term is null", c.term);
-			assertTrue("c.term == TERM", c.term == TERM);
 		}
-		
-		public function testScheme():void
+
+		public function testConstructor():void
 		{
 			var c:Category = new Category();
-			
-			c.scheme = SCHEME;
-			
-			assertNotNull("c.scheme is null", c.scheme);
-			assertTrue("c.scheme == SCHEME", c.scheme == SCHEME);
+			assertNotNull(c.path);
 		}
-		
-		public function testLabel():void
+
+		public function testAddPath():void
 		{
 			var c:Category = new Category();
-			
-			c.label = LABEL;
-			
-			assertNotNull("c.label is null", c.label);
-			assertTrue("c.label == LABEL", c.label == LABEL);
+			c.addPath("a");
+			assertTrue("c.path.length == 1", c.path.length == 1);
+			assertEquals("c.path[0] == \"a\"", c.path[0], "a");
+			c.addPath("b");
+			assertTrue("c.path.length == 2", c.path.length == 2);
+		}
+
+		public function testAddPaths():void
+		{
+			var c:Category = new Category();
+			c.addPaths(["a","b","c"]);
+			assertTrue("c.path.length == 3", c.path.length == 3);
+		}
+
+		public function testDomain():void
+		{
+			var c:Category = new Category();
+			c.domain = DOMAIN;
+			assertNotNull("c.domain is null", c.domain);
+			assertTrue("c.domain == DOMAIN", c.domain == DOMAIN);
 		}
 	}
 }

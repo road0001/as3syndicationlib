@@ -33,27 +33,26 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-//commented out due to a compiler bug
-//import com.adobe.xml.syndication.rss.tests.CategoryTest;
-import com.adobe.xml.syndication.rss.tests.CloudTest;
-import com.adobe.xml.syndication.rss.tests.EnclosureTest;
-import com.adobe.xml.syndication.rss.tests.GuidTest;
-import com.adobe.xml.syndication.rss.tests.RSS10Test;
-import com.adobe.xml.syndication.rss.tests.RSS20Test;
-import com.adobe.xml.syndication.rss.tests.SourceTest;
+//import com.adobe.xml.syndication.rss.CategoryTest;
+import com.adobe.xml.syndication.rss.CloudTest;
+import com.adobe.xml.syndication.rss.EnclosureTest;
+import com.adobe.xml.syndication.rss.GuidTest;
+import com.adobe.xml.syndication.rss.RSS10Test;
+import com.adobe.xml.syndication.rss.RSS20Test;
+import com.adobe.xml.syndication.rss.SourceTest;
 
-import com.adobe.xml.syndication.atom.tests.Atom10Test;
-import com.adobe.xml.syndication.atom.tests.AuthorTest;
-import com.adobe.xml.syndication.atom.tests.CategoryTest;
-import com.adobe.xml.syndication.atom.tests.ContentTest;
-import com.adobe.xml.syndication.atom.tests.ContributorTest;
-import com.adobe.xml.syndication.atom.tests.GeneratorTest;
-import com.adobe.xml.syndication.atom.tests.TextTagTest;
-import com.adobe.xml.syndication.atom.tests.TitleTest;
-import com.adobe.xml.syndication.atom.tests.PersonTagTest;
-import com.adobe.xml.syndication.atom.tests.SubTitleTest;
-import com.adobe.xml.syndication.atom.tests.RightsTest;
-import com.adobe.xml.syndication.atom.tests.LinkTest;
+import com.adobe.xml.syndication.atom.Atom10Test;
+import com.adobe.xml.syndication.atom.AuthorTest;
+//import com.adobe.xml.syndication.atom.CategoryTest;
+import com.adobe.xml.syndication.atom.ContentTest;
+import com.adobe.xml.syndication.atom.ContributorTest;
+import com.adobe.xml.syndication.atom.GeneratorTest;
+import com.adobe.xml.syndication.atom.TextTagTest;
+import com.adobe.xml.syndication.atom.TitleTest;
+import com.adobe.xml.syndication.atom.PersonTagTest;
+import com.adobe.xml.syndication.atom.SubTitleTest;
+import com.adobe.xml.syndication.atom.RightsTest;
+import com.adobe.xml.syndication.atom.LinkTest;
 
 
 import flexunit.framework.TestSuite;
@@ -68,28 +67,28 @@ private function createSuite():TestSuite
 {
 	var ts:TestSuite = new TestSuite();
 	
-		// RSS
-		ts.addTestSuite(com.adobe.xml.syndication.rss.tests.CategoryTest);
-		ts.addTestSuite(CloudTest);
-		ts.addTestSuite(EnclosureTest);
-		ts.addTestSuite(GuidTest);
-		ts.addTestSuite(RSS10Test);
-		ts.addTestSuite(RSS20Test);
-		ts.addTestSuite(SourceTest);
+	// RSS
+	ts.addTestSuite( com.adobe.xml.syndication.rss.CategoryTest );
+	ts.addTestSuite( CloudTest );
+	ts.addTestSuite( EnclosureTest );
+	ts.addTestSuite( GuidTest );
+	ts.addTestSuite( RSS10Test );
+	ts.addTestSuite( RSS20Test );
+	ts.addTestSuite( SourceTest );
 
-		// Atom
-		ts.addTestSuite(Atom10Test);
-		ts.addTestSuite(AuthorTest);
-		ts.addTestSuite(com.adobe.xml.syndication.atom.tests.CategoryTest);
-		ts.addTestSuite(ContentTest);
-		ts.addTestSuite(GeneratorTest);
-		ts.addTestSuite(TextTagTest);
-		ts.addTestSuite(TitleTest);
-		ts.addTestSuite(PersonTagTest);
-		ts.addTestSuite(SubTitleTest);
-		ts.addTestSuite(RightsTest);
-		ts.addTestSuite(LinkTest);
-		ts.addTestSuite(ContributorTest);
+	// Atom
+	ts.addTestSuite( Atom10Test );
+	ts.addTestSuite( AuthorTest );
+	ts.addTestSuite( com.adobe.xml.syndication.atom.CategoryTest );
+	ts.addTestSuite( ContentTest );
+	ts.addTestSuite( GeneratorTest );
+	ts.addTestSuite( TextTagTest );
+	ts.addTestSuite( TitleTest );
+	ts.addTestSuite( PersonTagTest );
+	ts.addTestSuite( SubTitleTest );
+	ts.addTestSuite( RightsTest );
+	ts.addTestSuite( LinkTest );
+	ts.addTestSuite( ContributorTest );
 
 	return ts;
 }

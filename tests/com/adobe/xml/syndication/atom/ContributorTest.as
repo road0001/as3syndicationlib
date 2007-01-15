@@ -33,31 +33,20 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.Content;
-
-	public class ContentTest extends TestCase 
-	{
-		
-		private const SRC:String = "as3";
+	import com.adobe.xml.syndication.atom.PersonTagTest;
 	
-		public function ContentTest(methodName:String = null)
+	import com.adobe.xml.syndication.atom.Contributor;
+
+	public class ContributorTest extends PersonTagTest 
+	{
+		public function ContributorTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
-		
-		public function testSrc():void
-		{
-			var c:Content = new Content();
-			
-			c.src = SRC;
-			
-			assertNotNull("c.src is null", c.src);
-			assertTrue("c.src == SRC", c.src == SRC);
-		}
 	}
 }

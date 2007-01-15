@@ -33,54 +33,31 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.Generator;
+	import com.adobe.xml.syndication.atom.Content;
 
-	public class GeneratorTest extends TestCase 
+	public class ContentTest extends TestCase 
 	{
+		
+		private const SRC:String = "as3";
 	
-		private const URI:String = "http://www.macromedia.com/some_value";
-		private const VALUE:String = "Custom Generating Agent";
-		private const VERSION:String = "0.8.5"; 
-	
-		public function GeneratorTest(methodName:String = null)
+		public function ContentTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
 		
-		public function testURI():void
+		public function testSrc():void
 		{
-			var c:Generator = new Generator();
+			var c:Content = new Content();
 			
-			c.value = URI;
+			c.src = SRC;
 			
-			assertNotNull("c.value is null", c.value);
-			assertTrue("c.value == URI", c.value == URI);
+			assertNotNull("c.src is null", c.src);
+			assertTrue("c.src == SRC", c.src == SRC);
 		}
-		
-		public function testValue():void
-		{
-			var c:Generator = new Generator();
-			
-			c.value = VALUE;
-			
-			assertNotNull("c.value is null", c.value);
-			assertTrue("c.value == VALUE", c.value == VALUE);
-		}
-		
-		public function testVersion():void
-		{
-			var c:Generator = new Generator();
-			
-			c.version = VERSION;
-			
-			assertNotNull("c.version is null", c.version);
-			assertTrue("c.version == VERSION", c.version == VERSION);
-		}		
-		
 	}
 }

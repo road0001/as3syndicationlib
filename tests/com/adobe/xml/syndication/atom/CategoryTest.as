@@ -33,53 +33,53 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.PersonTag;
+	import com.adobe.xml.syndication.atom.Category;
 
-	public class PersonTagTest extends TestCase 
-	{	
-		public static const NAME:String = "text";
-		public static const URI:String = "html";
-		public static const EMAIL:String = "xhtml";
+	public class CategoryTest extends TestCase 
+	{
+		
+		private const TERM:String = "as3";
+		private const SCHEME:String = "http://www.macromedia.com/as3";
+		private const LABEL:String = "ActionScript3";
 	
-		public function PersonTagTest(methodName:String = null)
+		public function CategoryTest(methodName:String = null)
 		{
 			super(methodName);
-		}			
+		}	
 		
-		public function testName():void
+		public function testTerm():void
 		{
-			var c:PersonTag = new PersonTag();
+			var c:Category = new Category();
 			
-			c.name = NAME;
+			c.term = TERM;
 			
-			assertNotNull("c.name is null", c.name);
-			assertTrue("c.name == NAME", c.name == NAME);
+			assertNotNull("c.term is null", c.term);
+			assertTrue("c.term == TERM", c.term == TERM);
 		}
 		
-		public function testUri():void
+		public function testScheme():void
 		{
-			var c:PersonTag = new PersonTag();
+			var c:Category = new Category();
 			
-			c.uri = URI;
+			c.scheme = SCHEME;
 			
-			assertNotNull("c.uri is null", c.uri);
-			assertTrue("c.uri == URI", c.uri == URI);
+			assertNotNull("c.scheme is null", c.scheme);
+			assertTrue("c.scheme == SCHEME", c.scheme == SCHEME);
 		}
 		
-		public function testEmail():void
+		public function testLabel():void
 		{
-			var c:PersonTag = new PersonTag();
+			var c:Category = new Category();
 			
-			c.email = EMAIL;
+			c.label = LABEL;
 			
-			assertNotNull("c.email is null", c.email);
-			assertTrue("c.email == EMAIL", c.email == EMAIL);
-		}		
-		
+			assertNotNull("c.label is null", c.label);
+			assertTrue("c.label == LABEL", c.label == LABEL);
+		}
 	}
 }
