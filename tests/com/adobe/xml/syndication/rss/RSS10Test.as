@@ -70,11 +70,11 @@ package com.adobe.xml.syndication.rss
             assertEquals("publisher",        c.publisher,              "Cantrell Press");
             assertEquals("language",         c.language,               "en");
             assertEquals("creator",          c.creator,                "Cantrell The Creator");
-            assertEquals("date",             c.date.toString(),        "Thu Sep 15 10:00:00 GMT-0700 2005");
+            assertEquals("date",             c.date.toUTCString(),        "Thu Sep 15 17:00:00 2005 UTC");
             assertEquals("rights'",          c.rights,                 "Copyright 2005 Christian Cantrell");
             assertEquals("updatePeriod",     c.updatePeriod,           "hourly");
             assertEquals("updateFrequency",  c.updateFrequency,        "2");
-            assertEquals("updateBase'",      c.updateBase.toString(),  "Fri Sep 16 11:00:00 GMT-0700 2005");
+            assertEquals("updateBase'",      c.updateBase.toUTCString(),  "Fri Sep 16 18:00:00 2005 UTC");
             assertEquals("image",            c.image,                  "http://host.domain.com/someimage.jpg");
 		}
 
@@ -103,7 +103,7 @@ package com.adobe.xml.syndication.rss
             assertEquals("subject",      item.subject,          "Flash");
             assertEquals("publisher",    item.publisher,        "Cantrell Press");
             assertEquals("creator",      item.creator,          "Cantrell The Creator");
-            assertEquals("date",         item.date.toString(),  "Sat Oct 15 10:00:00 GMT-0700 2005");
+            assertEquals("date",         item.date.toUTCString(),  "Sat Oct 15 17:00:00 2005 UTC");
             assertEquals("rights",       item.rights,           "Copyright 2006 Christian Cantrell");
 		}
 

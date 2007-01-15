@@ -67,7 +67,7 @@ package com.adobe.xml.syndication.atom
             assertEquals("title.value", feedData.title.value, "Atom 1.0 Feed");
             assertEquals("subtitle.type", feedData.subtitle.type, "text");
             assertEquals("subtitle.value", feedData.subtitle.value, "Subtitle here.");
-            assertEquals("subtitle.updated", feedData.updated.toString(), "Fri Jan 20 04:00:00 GMT-0800 2006");
+            assertEquals("subtitle.updated", feedData.updated.toUTCString(), "Fri Jan 20 12:00:00 2006 UTC");
             assertEquals("subtitle.id", feedData.id, "1234567890abcdef");
 
             // Authors
@@ -137,8 +137,9 @@ package com.adobe.xml.syndication.atom
             assertEquals("link.length", link.length, "256");
 
             assertEquals("id", entry.id, "abcdef1234567890");
-            assertEquals("updated", entry.updated.toString(), "Thu Jan 19 04:00:00 GMT-0800 2006");
-            assertEquals("published", entry.published.toString(), "Wed Jan 18 04:00:00 GMT-0800 2006");
+            
+            assertEquals("updated", entry.updated.toUTCString(), "Thu Jan 19 12:00:00 2006 UTC");
+            assertEquals("published", entry.published.toUTCString(), "Wed Jan 18 12:00:00 2006 UTC");
 
             // Authors
             var authors:Array = entry.authors;
