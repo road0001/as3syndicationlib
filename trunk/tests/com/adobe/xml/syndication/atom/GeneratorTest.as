@@ -33,20 +33,54 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.tests.TextTagTest;
-	
-	import com.adobe.xml.syndication.atom.Title;
+	import com.adobe.xml.syndication.atom.Generator;
 
-	public class TitleTest extends TextTagTest 
+	public class GeneratorTest extends TestCase 
 	{
-		public function TitleTest(methodName:String = null)
+	
+		private const URI:String = "http://www.macromedia.com/some_value";
+		private const VALUE:String = "Custom Generating Agent";
+		private const VERSION:String = "0.8.5"; 
+	
+		public function GeneratorTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
+		
+		public function testURI():void
+		{
+			var c:Generator = new Generator();
+			
+			c.value = URI;
+			
+			assertNotNull("c.value is null", c.value);
+			assertTrue("c.value == URI", c.value == URI);
+		}
+		
+		public function testValue():void
+		{
+			var c:Generator = new Generator();
+			
+			c.value = VALUE;
+			
+			assertNotNull("c.value is null", c.value);
+			assertTrue("c.value == VALUE", c.value == VALUE);
+		}
+		
+		public function testVersion():void
+		{
+			var c:Generator = new Generator();
+			
+			c.version = VERSION;
+			
+			assertNotNull("c.version is null", c.version);
+			assertTrue("c.version == VERSION", c.version == VERSION);
+		}		
+		
 	}
 }

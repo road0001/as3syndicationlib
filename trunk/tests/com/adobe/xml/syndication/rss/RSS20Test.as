@@ -33,7 +33,7 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.rss.tests
+package com.adobe.xml.syndication.rss
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;

@@ -33,20 +33,77 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.rss
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.tests.TextTagTest;
-	
-	import com.adobe.xml.syndication.atom.Title;
+	import com.adobe.xml.syndication.rss.Cloud;
 
-	public class RightsTest extends TextTagTest 
+	public class CloudTest extends TestCase 
 	{
-		public function RightsTest(methodName:String = null)
+	
+		public function CloudTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
+		
+		
+		private const DOMAIN:String = "foo.macromedia.com";
+		private const PATH:String = "/path";
+		private const REGISTER_PROCEDURE:String = "api.foo.call";
+		private const PROTOCOL:String = "xml-rpc";
+		private const PORT:uint = 80;
+		
+		public function testDomain():void
+		{
+			var c:Cloud = new Cloud();
+			
+			c.domain = DOMAIN;
+			
+			assertNotNull("c.domain is null", c.domain);
+			assertTrue("c.domain == DOMAIN", c.domain == DOMAIN);
+		}
+		
+		public function testPort():void
+		{
+			var c:Cloud = new Cloud();
+			
+			c.port = PORT;
+			
+			assertTrue("c.port is 0", c.port != 0);
+			assertTrue("c.port == PORT", c.port == PORT);
+		}
+
+		public function testPath():void
+		{
+			var c:Cloud = new Cloud();
+			
+			c.path = PATH;
+			
+			assertNotNull("c.path is null", c.path);
+			assertTrue("c.path == PATH", c.path == PATH);
+		}
+		
+		public function testRegisterProcedure():void
+		{
+			var c:Cloud = new Cloud();
+			
+			c.registerProcedure = REGISTER_PROCEDURE;
+			
+			assertNotNull("c.registerProcedure is null", c.registerProcedure);
+			assertTrue("c.registerProcedure == REGISTER_PROCEDURE", c.registerProcedure == REGISTER_PROCEDURE);
+		}
+		
+		public function testProtocol():void
+		{
+			var c:Cloud = new Cloud();
+			
+			c.protocol = PROTOCOL;
+			
+			assertNotNull("c.protocol is null", c.protocol);
+			assertTrue("c.protocol == PROTOCOL", c.protocol == PROTOCOL);
+		}
+
 	}
 }

@@ -33,42 +33,43 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.rss.tests
+package com.adobe.xml.syndication.rss
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.rss.Guid;
+	import com.adobe.xml.syndication.rss.Source;
 
-	public class GuidTest extends TestCase 
+	public class SourceTest extends TestCase 
 	{
 	
-		public function GuidTest(methodName:String = null)
+		public function SourceTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
 		
-		private const PERMALINK:Boolean = true;
-		private const ID:String = "http://weblogs.macromedia/mesh/index.cfm";
 		
-		public function testPermaLink():void
+		private const URL:String = "http://www.macromedia.com/source.xml";
+		private const NAME:String = "Name of the Source";
+		
+		public function testURL():void
 		{
-			var c:Guid = new Guid();
+			var c:Source = new Source();
 			
-			c.permaLink = PERMALINK;
+			c.url = URL;
 			
-			assertTrue("c.permaLink != false",c.permaLink != false);
-			assertTrue("c.permaLink == PERMALINK", c.permaLink == PERMALINK);
+			assertNotNull("c.url is null", c.url);
+			assertTrue("c.url == URL", c.url == URL);
 		}
-		
-		public function testId():void
+
+		public function testName():void
 		{
-			var c:Guid = new Guid();
+			var c:Source = new Source();
 			
-			c.id = ID;
+			c.name = NAME;
 			
-			assertNotNull("c.id is null", c.id);
-			assertTrue("c.id == ID", c.id == ID);
+			assertNotNull("c.name is null", c.name);
+			assertTrue("c.name == NAME", c.name == NAME);
 		}
 
 	}

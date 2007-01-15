@@ -33,20 +33,53 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.tests.PersonTagTest;
-	
-	import com.adobe.xml.syndication.atom.Contributor;
+	import com.adobe.xml.syndication.atom.PersonTag;
 
-	public class ContributorTest extends PersonTagTest 
-	{
-		public function ContributorTest(methodName:String = null)
+	public class PersonTagTest extends TestCase 
+	{	
+		public static const NAME:String = "text";
+		public static const URI:String = "html";
+		public static const EMAIL:String = "xhtml";
+	
+		public function PersonTagTest(methodName:String = null)
 		{
 			super(methodName);
-		}	
+		}			
+		
+		public function testName():void
+		{
+			var c:PersonTag = new PersonTag();
+			
+			c.name = NAME;
+			
+			assertNotNull("c.name is null", c.name);
+			assertTrue("c.name == NAME", c.name == NAME);
+		}
+		
+		public function testUri():void
+		{
+			var c:PersonTag = new PersonTag();
+			
+			c.uri = URI;
+			
+			assertNotNull("c.uri is null", c.uri);
+			assertTrue("c.uri == URI", c.uri == URI);
+		}
+		
+		public function testEmail():void
+		{
+			var c:PersonTag = new PersonTag();
+			
+			c.email = EMAIL;
+			
+			assertNotNull("c.email is null", c.email);
+			assertTrue("c.email == EMAIL", c.email == EMAIL);
+		}		
+		
 	}
 }

@@ -33,18 +33,18 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.Author;
-	import com.adobe.xml.syndication.atom.tests.PersonTagTest;
-
-	public class AuthorTest extends PersonTagTest 
-	{
+	import com.adobe.xml.syndication.atom.TextTagTest;
 	
-		public function AuthorTest(methodName:String = null)
+	import com.adobe.xml.syndication.atom.Title;
+
+	public class TitleTest extends TextTagTest 
+	{
+		public function TitleTest(methodName:String = null)
 		{
 			super(methodName);
 		}	

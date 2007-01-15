@@ -33,68 +33,20 @@
 	ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-package com.adobe.xml.syndication.atom.tests
+package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
 	import flexunit.framework.TestSuite;
 	
-	import com.adobe.xml.syndication.atom.TextTag;
-
-	public class TextTagTest extends TestCase 
-	{
-		
-		private const TYPE:String = "html";
-		private const VALUE:String = "html";
-		
-		public static const TYPE_TEXT:String = "text";
-		public static const TYPE_HTML:String = "html";
-		public static const TYPE_XHTML:String = "xhtml";
+	import com.adobe.xml.syndication.atom.TitleTest;
 	
-		public function TextTagTest(methodName:String = null)
+	import com.adobe.xml.syndication.atom.SubTitle;
+
+	public class SubTitleTest extends TitleTest 
+	{
+		public function SubTitleTest(methodName:String = null)
 		{
 			super(methodName);
 		}	
-		
-		public function testTYPE_TEXT():void
-		{
-			assertNotNull("TextTag.TYPE_TEXT is null", TextTag.TYPE_TEXT);
-			assertTrue("TextTag.TYPE_TEXT == TYPE_TEXT",
-											TextTag.TYPE_TEXT == TYPE_TEXT);
-		}
-		
-		public function testTYPE_HTML():void
-		{
-			assertNotNull("TextTag.TYPE_HTML is null", TextTag.TYPE_HTML);
-			assertTrue("TextTag.TYPE_HTML == TYPE_HTML",
-											TextTag.TYPE_HTML == TYPE_HTML);
-		}		
-		
-		public function testTYPE_XHTML():void
-		{
-			assertNotNull("TextTag.TYPE_XHTML is null", TextTag.TYPE_XHTML);
-			assertTrue("TextTag.TYPE_XHTML == TYPE_XHTML",
-											TextTag.TYPE_XHTML == TYPE_XHTML);
-		}			
-		
-		public function testType():void
-		{
-			var c:TextTag = new TextTag();
-			
-			c.type = TYPE;
-			
-			assertNotNull("c.type is null", c.type);
-			assertTrue("c.type == TYPE", c.type == TYPE);
-		}
-		
-		
-		public function testValue():void
-		{
-			var c:TextTag = new TextTag();
-			
-			c.value = VALUE;
-			
-			assertNotNull("c.value is null", c.value);
-			assertTrue("c.value == VALUE", c.value == VALUE);
-		}
 	}
 }
