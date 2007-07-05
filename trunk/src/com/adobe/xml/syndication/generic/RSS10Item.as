@@ -123,6 +123,7 @@ package com.adobe.xml.syndication.generic
 		 */
 		public function get authors():Array
 		{
+			if (this.item.creator == null) return null;
 			var author:Author = new Author();
 			author.name = this.item.creator;
 			return [author];
