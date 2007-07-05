@@ -127,6 +127,7 @@ package com.adobe.xml.syndication.generic
 		 */
 		public function get authors():Array
 		{
+			if (this.item.author == null) return null;
 			var author:Author = new Author();
 			author.email = this.item.author;
 			return [author];
