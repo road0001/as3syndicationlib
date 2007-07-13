@@ -140,6 +140,19 @@ package com.adobe.xml.syndication.generic
 		}
 
 		/**
+ 		 * One or more categories of this item.
+		 * 
+		 * @langversion ActionScript 3.0
+		 * @playerversion Flash 8.5
+		 * @tiptext
+		 */
+		public function get topics():Array
+		{
+			if (this.item.categories == null) return null;
+			return this.item.categories;
+		}
+
+		/**
  		 * An excerpt or description of this item.
 		 * 
 		 * @langversion ActionScript 3.0

@@ -49,7 +49,9 @@ package com.adobe.xml.syndication.atom
 	* 
 	* 	@see http://www.atomenabled.org/developers/syndication/atom-format-spec.php#rfc.section.4.1.1
 	*/
-	public class FeedData extends NewsFeedElement
+	public class FeedData10
+		extends NewsFeedElement
+		implements IFeedData
 	{
 		private var atom:Namespace = Namespaces.ATOM_NS;
 		
@@ -63,7 +65,7 @@ package com.adobe.xml.syndication.atom
 		*	@playerversion Flash 8.5
 		*	@tiptext
 		*/			
-		public function FeedData(x:XMLList)
+		public function FeedData10(x:XMLList)
 		{
 			super(x);
 		}

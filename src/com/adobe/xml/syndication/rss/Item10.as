@@ -130,9 +130,16 @@ package com.adobe.xml.syndication.rss
 		 * @playerversion Flash 8.5
 		 * @tiptext
 		 */
-		public function get creator():String
+		public function get creators():Array
 		{
-			return ParsingTools.nullCheck(this.x.dc::creator);
+			if (ParsingTools.nullCheck(this.x.dc::creator) == null) return null;
+			var creators:Array = new Array();
+			var i:XML;
+			for each (i in this.x.dc::creator)
+			{
+				creators.push(i);
+			}
+			return creators;
 		}
 
 		/**
@@ -154,9 +161,16 @@ package com.adobe.xml.syndication.rss
 		 * @playerversion Flash 8.5
 		 * @tiptext
 		 */
-		public function get subject():String
+		public function get subjects():Array
 		{
-			return ParsingTools.nullCheck(this.x.dc::subject);
+			if (ParsingTools.nullCheck(this.x.dc::subject) == null) return null;
+			var subjects:Array = new Array();
+			var i:XML;
+			for each (i in this.x.dc::subject)
+			{
+				subjects.push(i);
+			}
+			return subjects;
 		}
 
 		/**

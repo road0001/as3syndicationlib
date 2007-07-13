@@ -52,6 +52,7 @@ package com.adobe.xml.syndication
 		public static var TI_NS:Namespace = new Namespace("http://purl.org/rss/1.0/modules/textinput/");
 		public static var RSS_NS:Namespace = new Namespace("http://purl.org/rss/1.0/");
 		public static var ATOM_NS:Namespace = new Namespace("http://www.w3.org/2005/Atom");
+		public static var ATOM_03_NS:Namespace = new Namespace("http://purl.org/atom/ns#");
 		public static var XHTML_NS:Namespace = new Namespace("http://www.w3.org/1999/xhtml");
 	}
 }

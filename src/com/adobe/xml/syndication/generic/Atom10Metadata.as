@@ -37,7 +37,7 @@ package com.adobe.xml.syndication.generic
 {
 
 	import com.adobe.xml.syndication.atom.Author;
-	import com.adobe.xml.syndication.atom.FeedData;
+	import com.adobe.xml.syndication.atom.FeedData10;
 
 	/**
 	 * Class that abstracts out the specific characteristics of an Atom feed
@@ -53,7 +53,7 @@ package com.adobe.xml.syndication.generic
 	public class Atom10Metadata
 		implements IMetadata
 	{
-		private var feedData:FeedData;
+		private var feedData:FeedData10;
 
 		/**
 		 * Create a new Atom10Item instance.
@@ -64,7 +64,7 @@ package com.adobe.xml.syndication.generic
 		 * @playerversion Flash 8.5
 		 * @tiptext
 		 */
-		public function Atom10Metadata(feedData:FeedData)
+		public function Atom10Metadata(feedData:FeedData10)
 		{
 			this.feedData = feedData;
 		}
