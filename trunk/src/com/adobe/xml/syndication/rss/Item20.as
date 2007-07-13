@@ -114,9 +114,16 @@ package com.adobe.xml.syndication.rss
 		 * @playerversion Flash 8.5
 		 * @tiptext
 		 */
-		public function get creator():String
+		public function get creators():Array
 		{
-			return ParsingTools.nullCheck(this.x.dc::creator);
+			if (ParsingTools.nullCheck(this.x.dc::creator) == null) return null;
+			var creators:Array = new Array();
+			var i:XML;
+			for each (i in this.x.dc::creator)
+			{
+				creators.push(i);
+			}
+			return creators;
 		}
 
 		/**
@@ -172,7 +179,14 @@ package com.adobe.xml.syndication.rss
 		 */
 		public function get categories():Array
 		{
-			return ParsingTools.xmlToCategories(this.x.category);
+			if (ParsingTools.nullCheck(this.x.category) == null) return null;
+			var categories:Array = new Array();
+			var i:XML;
+			for each (i in this.x.category)
+			{
+				categories.push(i);
+			}
+			return categories;
 		}
 
 		/**

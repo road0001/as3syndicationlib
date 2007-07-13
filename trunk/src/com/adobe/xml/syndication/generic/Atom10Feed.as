@@ -37,7 +37,8 @@ package com.adobe.xml.syndication.generic
 {
 
 	import com.adobe.xml.syndication.atom.Atom10;
-	import com.adobe.xml.syndication.atom.Entry;
+	import com.adobe.xml.syndication.atom.Entry10;
+	import com.adobe.xml.syndication.atom.FeedData10;
 
 	/**
 	 * Class that abstracts out the specific characteristics of an Atom feed
@@ -67,9 +68,9 @@ package com.adobe.xml.syndication.generic
 		public function Atom10Feed(atom10:Atom10)
 		{
 			this.atom10 = atom10;
-			this._metadata = new Atom10Metadata(this.atom10.feedData);
+			this._metadata = new Atom10Metadata(this.atom10.feedData as FeedData10);
 			this._items = new Array();
-			for each (var item:Entry in this.atom10.entries)
+			for each (var item:Entry10 in this.atom10.entries)
 			{
 				this._items.push(new Atom10Item(item));
 			}

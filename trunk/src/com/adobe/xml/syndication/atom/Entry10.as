@@ -50,7 +50,9 @@ package com.adobe.xml.syndication.atom
 	* 
 	* 	@see http://www.atomenabled.org/developers/syndication/atom-format-spec.php#rfc.section.4.1.2
 	*/
-	public class Entry extends NewsFeedElement
+	public class Entry10
+		extends NewsFeedElement
+		implements IEntry
 	{
 		private var atom:Namespace = Namespaces.ATOM_NS;
 		private var xhtml:Namespace = Namespaces.XHTML_NS;
@@ -65,7 +67,7 @@ package com.adobe.xml.syndication.atom
 		*	@playerversion Flash 8.5
 		*	@tiptext
 		*/	
-		public function Entry(x:XMLList)
+		public function Entry10(x:XMLList)
 		{
 			super(x);
 		}
@@ -246,9 +248,9 @@ package com.adobe.xml.syndication.atom
 		*
 		*	@see http://www.atomenabled.org/developers/syndication/atom-format-spec.php#atomContent
 		*/	
-		public function get source():FeedData
+		public function get source():FeedData10
 		{
-			return new FeedData(XMLList(this.x.atom::source));
+			return new FeedData10(XMLList(this.x.atom::source));
 		}
 	}
 }

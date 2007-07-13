@@ -79,6 +79,6 @@ package com.adobe.xml.syndication.rss
 		 * @playerversion Flash 8.5
 		 * @tiptext
 		 */
-		function get creator():String;
+		function get creators():Array;
 	}
 }

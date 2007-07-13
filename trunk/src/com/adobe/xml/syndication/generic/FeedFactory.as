@@ -37,6 +37,7 @@ package com.adobe.xml.syndication.generic
 {
 
 	import com.adobe.xml.syndication.atom.Atom10;
+	import com.adobe.xml.syndication.atom.Atom03;
 	import com.adobe.xml.syndication.rss.RSS10;
 	import com.adobe.xml.syndication.rss.RSS20;
 
@@ -88,7 +89,15 @@ package com.adobe.xml.syndication.generic
 		 */
 		public static function getFeedByXML(x:XML):IFeed
 		{
-			// Atom
+			// Atom 0.3
+			if (x.namespace().uri.toLowerCase() == "http://purl.org/atom/ns#")
+			{
+				var atom03:Atom03 = new Atom03();
+				atom03.populate(x);
+				return new Atom03Feed(atom03);
+			}
+
+			// Atom 1.0
 			if (x.namespace().uri.toLowerCase() == "http://www.w3.org/2005/atom")
 			{
 				var atom10:Atom10 = new Atom10();

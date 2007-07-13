@@ -37,8 +37,9 @@ package com.adobe.xml.syndication.generic
 {
 
 	import com.adobe.xml.syndication.atom.Author;
-	import com.adobe.xml.syndication.atom.Entry;
+	import com.adobe.xml.syndication.atom.Entry10;
 	import com.adobe.xml.syndication.atom.Link;
+	import com.adobe.xml.syndication.atom.Category;
 
 	/**
 	 * Class that abstracts out the specific characteristics of an Atom entry
@@ -52,7 +53,7 @@ package com.adobe.xml.syndication.generic
 	public class Atom10Item
 		implements IItem
 	{
-		private var entry:Entry;
+		private var entry:Entry10;
 
 		/**
 		 * Create a new Atom10Item instance.
@@ -63,7 +64,7 @@ package com.adobe.xml.syndication.generic
 		 * @playerversion Flash 8.5
 		 * @tiptext
 		 */
-		public function Atom10Item(entry:Entry)
+		public function Atom10Item(entry:Entry10)
 		{
 			this.entry = entry;
 		}
@@ -148,6 +149,28 @@ package com.adobe.xml.syndication.generic
 				authors.push(newAuthor);
 			}
 			return authors;
+		}
+
+		/**
+ 		 * One or more categories.
+		 * 
+		 * @langversion ActionScript 3.0
+		 * @playerversion Flash 8.5
+		 * @tiptext
+		 */
+		public function get topics():Array
+		{
+			if (this.entry.categories == null || this.entry.categories.length == 0)
+			{
+				return null;
+			}
+
+			var topics:Array = new Array();
+			for each (var category:Category in this.entry.categories)
+			{
+				topics.push(category.label);
+			}
+			return topics;
 		}
 
 		/**

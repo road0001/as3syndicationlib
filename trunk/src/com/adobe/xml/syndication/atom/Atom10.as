@@ -49,10 +49,12 @@ package com.adobe.xml.syndication.atom
 	* 
 	* 	@see http://www.atomenabled.org/developers/syndication/atom-format-spec.php
 	*/	
-	public class Atom10 extends NewsParser
+	public class Atom10
+		extends NewsParser
+		implements IAtom
 	{
 		private var atom:Namespace = Namespaces.ATOM_NS;
-		private var _feedData:FeedData;
+		private var _feedData:FeedData10;
 		private var _entries:Array;
 
 		/**
@@ -76,11 +78,11 @@ package com.adobe.xml.syndication.atom
 		*	@playerversion Flash 8.5
 		*	@tiptext
 		*/	
-		public function get feedData():FeedData
+		public function get feedData():IFeedData
 		{
 			if (this._feedData == null)
 			{
-				this._feedData = new FeedData(XMLList(this.x));
+				this._feedData = new FeedData10(XMLList(this.x));
 			}
 			return this._feedData;
 		}
@@ -106,7 +108,7 @@ package com.adobe.xml.syndication.atom
 				var i:XML;
 				for each (i in this.x.atom::entry)
 				{
-					this._entries.push(new Entry(XMLList(i)));
+					this._entries.push(new Entry10(XMLList(i)));
 				}
 			}
 			return this._entries;
