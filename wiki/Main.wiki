@@ -13,7 +13,12 @@ Functionality includes:
   * API that abstracts differences between RSS / Atom
 
 =Authors=
-  * [http://weblogs.macromedia.com/cantrell/ Christian Cantrell
+  * [http://weblogs.macromedia.com/cantrell/ Christian Cantrell]
+
+=Contributors=
+  * [http://www.mikechambers.com Mike Chambers]
+  * Shawn Allen
+
 
 
 
