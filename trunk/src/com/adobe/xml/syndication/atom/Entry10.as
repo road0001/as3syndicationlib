@@ -238,6 +238,14 @@ package com.adobe.xml.syndication.atom
 			return categories;
 		}
 
+        /**
+		 * @see http://www.atomenabled.org/developers/syndication/atom-format-spec.php#element.summary
+         */
+        public function get summary():String
+        {
+            return ParsingTools.nullCheck(this.x.atom::summary);
+        }
+
 		/**
 		*	A FeedData object that represents the source element of an Atom
 		*	entry
