@@ -192,7 +192,18 @@ package com.adobe.xml.syndication.rss
 			var i:XML;
 			for each (i in this.x.category)
 			{
-				categories.push(i);
+				var c:Category = new Category();
+				c.domain = i.@domain;
+				var fullPath:String = i;
+				if (i != null)
+				{
+					var pathArray:Array = fullPath.split("/");
+					for each (var path:String in pathArray)
+					{
+						c.addPath(path);
+					}
+				}
+				categories.push(c);
 			}
 			return categories;
 		}
