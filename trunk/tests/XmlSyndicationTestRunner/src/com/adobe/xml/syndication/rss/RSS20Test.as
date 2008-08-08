@@ -141,7 +141,7 @@ package com.adobe.xml.syndication.rss
             assertEquals("title",             item.title,             "Post Title");
             assertEquals("link",              item.link,              "http://host.domain.com/path/to/post.html");
             assertEquals("description",       item.description,       "This is a post description.");
-            assertEquals("creator",           item.creator,           "Cantrell The Creator");
+            assertEquals("creator",           item.creators[0],       "Cantrell The Creator");
             assertEquals("source.url",        item.source.url,        "http://www.anothersite.com/index.html");
             assertEquals("source.name",       item.source.name,       "Another Site");
             assertEquals("enclosure.url",     item.enclosure.url,     "http://www.exampleurl.com/example/001.mp3");
