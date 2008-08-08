@@ -36,12 +36,6 @@
 package com.adobe.xml.syndication.atom
 {
 	import flexunit.framework.TestCase;
-	import flexunit.framework.TestSuite;
-	
-	import com.adobe.xml.syndication.atom.Atom10;
-	import com.adobe.xml.syndication.atom.FeedData;
-	import com.adobe.xml.syndication.atom.Link;
-	import com.adobe.xml.syndication.atom.Entry;
 
 	public class Atom10Test extends TestCase 
 	{
@@ -61,7 +55,7 @@ package com.adobe.xml.syndication.atom
 
 		public function testFeedData():void
 		{
-            var feedData:FeedData = atom10.feedData;
+            var feedData:FeedData10 = atom10.feedData as FeedData10;
 			assertNotNull(feedData);
             assertEquals("title.type", feedData.title.type, "text");
             assertEquals("title.value", feedData.title.value, "Atom 1.0 Feed");
@@ -95,7 +89,7 @@ package com.adobe.xml.syndication.atom
             assertEquals("categories.label", categories[0].label, "label");
 
             // Link
-            var link:Link = feedData.link;
+            var link:Link = feedData.links[0];
             assertEquals("link.rel", link.rel, "alternate");
             assertEquals("link.type", link.type, "text/html");
             assertEquals("link.hreflang", link.hreflang, "en");
@@ -121,7 +115,7 @@ package com.adobe.xml.syndication.atom
             var entries:Array = atom10.entries;
 			assertNotNull(entries);
             assertEquals("entries.length", entries.length, 1);
-            var entry:Entry = entries[0];
+            var entry:Entry10 = entries[0];
             assertEquals("entry.title", entry.title, "Atom title #1");
 
             // Links
@@ -171,7 +165,7 @@ package com.adobe.xml.syndication.atom
             assertEquals("categories.label", categories[0].label, "label");
 
             // Source
-            var sourceFeedData:FeedData = entry.source;
+            var sourceFeedData:FeedData10 = entry.source;
 			assertNotNull(sourceFeedData);
             assertEquals("source.id", sourceFeedData.id, "this:is:the:metadata:id");
         }

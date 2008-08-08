@@ -100,9 +100,9 @@ package com.adobe.xml.syndication.rss
             assertEquals("title",        item.title,            "Post Title");
             assertEquals("link",         item.link,             "http://host.domain.com/path/to/post.html");
             assertEquals("description",  item.description,      "This is a post description.");
-            assertEquals("subject",      item.subject,          "Flash");
+            assertEquals("subject",      item.subjects[0],      "Flash");
             assertEquals("publisher",    item.publisher,        "Cantrell Press");
-            assertEquals("creator",      item.creator,          "Cantrell The Creator");
+            assertEquals("creator",      item.creators[0],      "Cantrell The Creator");
             assertEquals("date",         item.date.toUTCString(),  "Sat Oct 15 17:00:00 2005 UTC");
             assertEquals("rights",       item.rights,           "Copyright 2006 Christian Cantrell");
 		}
