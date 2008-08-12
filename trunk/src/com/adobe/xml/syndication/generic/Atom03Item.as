@@ -106,18 +106,18 @@ package com.adobe.xml.syndication.generic
 		public function get excerpt():Excerpt
 		{
 			var excerpt:Excerpt = new Excerpt;
-			if (this.entry.content != null)
-			{
-				excerpt.src = this.entry.content.src;
-				excerpt.type = this.entry.content.type;
-				excerpt.value = this.entry.content.value;
-			}
-			else if (this.entry.summary != null)
+			if (this.entry.summary != null)
 			{
 				excerpt.type = this.entry.summary.type;
 				excerpt.value = this.entry.summary.value;
 			}
 			return excerpt;
+		}
+
+		public function get content():String
+		{
+			if (this.entry.content == null) return null;
+			return this.entry.content.value;
 		}
 
 		public function get media():Media

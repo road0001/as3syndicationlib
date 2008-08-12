@@ -95,6 +95,15 @@ package com.adobe.xml.syndication.generic
 		function get excerpt():Excerpt;
 
 		/**
+ 		 * Item's content.
+		 * 
+		 * @langversion ActionScript 3.0
+		 * @playerversion Flash 8.5
+		 * @tiptext
+		 */
+		function get content():String;
+
+		/**
  		 * An item's topics.
 		 * 
 		 * @langversion ActionScript 3.0
