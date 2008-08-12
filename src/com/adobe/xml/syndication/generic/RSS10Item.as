@@ -152,11 +152,16 @@ package com.adobe.xml.syndication.generic
 		 */
 		public function get excerpt():Excerpt
 		{
-			var excerpt:Excerpt = new Excerpt;
+			var excerpt:Excerpt = new Excerpt();
 			excerpt.src = null;
 			excerpt.type = "text";
 			excerpt.value = this.item.description;
 			return excerpt;
+		}
+
+		public function get content():String
+		{
+			return null;
 		}
 
 		/**

@@ -162,12 +162,13 @@ package com.adobe.xml.syndication.generic
 				excerpt.type = "text";
 				excerpt.value = this.item.description;
 			}
-			else if (this.item.encodedContent != null)
-			{
-				excerpt.type = "html";
-				excerpt.value = this.item.encodedContent;
-			}
 			return excerpt;
+		}
+
+		public function get content():String
+		{
+			if (this.item.encodedContent == null) return null;
+			return this.item.encodedContent;
 		}
 
 		/**
