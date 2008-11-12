@@ -31,6 +31,7 @@
 package com.adobe.xml.syndication.generic
 {
 
+	import com.adobe.xml.syndication.rss.Category;
 	import com.adobe.xml.syndication.rss.Item20;
 
 	/**
@@ -144,7 +145,15 @@ package com.adobe.xml.syndication.generic
 		public function get topics():Array
 		{
 			if (this.item.categories == null) return null;
-			return this.item.categories;
+			var categories:Array = new Array();
+			for each (var cat:Category in this.item.categories)
+			{
+				for each (var innerCat:String in cat.path)
+				{
+					categories.push(innerCat);
+				}
+			}
+			return categories;
 		}
 
 		/**
